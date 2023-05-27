@@ -4,14 +4,14 @@ let distance = 0
 radio.setGroup(11)
 radio.setTransmitPower(7)
 basic.forever(function () {
+    radio.sendNumber(Environment.ReadDust(DigitalPin.P16, AnalogPin.P1))
+})
+basic.forever(function () {
     distance = sonar.ping(
     DigitalPin.P2,
     DigitalPin.P12,
     PingUnit.Centimeters
     )
-    basic.showNumber(Environment.ReadDust(DigitalPin.P16, AnalogPin.P1))
-})
-basic.forever(function () {
     if (distance < 100 && flushing == 1) {
         radio.sendValue("Unavailable", 3)
         availability = 1
