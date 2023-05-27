@@ -9,6 +9,7 @@ basic.forever(function () {
     DigitalPin.P12,
     PingUnit.Centimeters
     )
+    basic.showNumber(Environment.ReadDust(DigitalPin.P16, AnalogPin.P1))
 })
 basic.forever(function () {
     if (distance < 100 && flushing == 1) {

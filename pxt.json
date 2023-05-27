@@ -7,7 +7,8 @@
         "radio": "*",
         "microphone": "*",
         "pxt-sonar": "github:microsoft/pxt-sonar#v0.0.5",
-        "robotbit": "github:kittenbot/pxt-robotbit#v0.4.5"
+        "robotbit": "github:kittenbot/pxt-robotbit#v0.4.5",
+        "Environment-and-Science-IoT": "github:tinkertanker/pxt-iot-environment-kit#v5.2.1"
     },
     "files": [
         "main.blocks",
