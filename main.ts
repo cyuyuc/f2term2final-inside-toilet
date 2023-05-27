@@ -15,9 +15,11 @@ basic.forever(function () {
         radio.sendValue("Unavailable", 3)
         availability = 1
     } else if (distance > 100 && availability == 1) {
+        robotbit.Servo(robotbit.Servos.S1, 0)
         radio.sendValue("Flushing", 2)
         availability = 0
         flushing = 1
+        robotbit.Servo(robotbit.Servos.S1, 180)
     } else {
         radio.sendValue("Available", 1)
     }
