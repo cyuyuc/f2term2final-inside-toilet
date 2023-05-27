@@ -1,5 +1,6 @@
 let distance = 0
 let availability = 1
+let distance_virable = 1
 radio.setGroup(11)
 radio.setTransmitPower(7)
 robotbit.Servo(robotbit.Servos.S1, 180)
@@ -14,18 +15,19 @@ basic.forever(function () {
     DigitalPin.P12,
     PingUnit.Centimeters
     )
-    if (distance <= 30) {
+    if (distance <= 80) {
         radio.sendValue("Unavailable", 3)
         availability = 2
-    } else if (distance >= 30 && availability == 2) {
+    } else if (distance >= 80 && availability == 2) {
         robotbit.Servo(robotbit.Servos.S1, 180)
         radio.sendValue("Flushing", 2)
         availability = 1
         basic.pause(1000)
         robotbit.Servo(robotbit.Servos.S1, 0)
-    } else if (distance >= 30 && availability == 1) {
+    } else if (distance >= 80) {
         radio.sendValue("Available", 1)
     } else {
         radio.sendValue("Error", 4)
     }
+    basic.pause(2000)
 })
