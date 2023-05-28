@@ -1,6 +1,5 @@
 let distance = 0
 let availability = 1
-let distance_virable = 1
 radio.setGroup(11)
 radio.setTransmitPower(7)
 robotbit.Servo(robotbit.Servos.S1, 180)
