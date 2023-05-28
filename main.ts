@@ -15,10 +15,10 @@ basic.forever(function () {
     DigitalPin.P12,
     PingUnit.Centimeters
     )
-    if (distance <= 80) {
+    if (distance <= 70) {
         radio.sendValue("Unavailable", 3)
         availability = 2
-    } else if (distance >= 80 && availability == 2) {
+    } else if (distance >= 70 && availability == 70) {
         robotbit.Servo(robotbit.Servos.S1, 180)
         radio.sendValue("Flushing", 2)
         availability = 1
@@ -29,5 +29,5 @@ basic.forever(function () {
     } else {
         radio.sendValue("Error", 4)
     }
-    basic.pause(2000)
+    basic.pause(1000)
 })
